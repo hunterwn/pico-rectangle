@@ -18,28 +18,28 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
-    xInputReport.rightStickPress = buttonSet.my;
-    xInputReport.leftStickPress = buttonSet.mx;
-    xInputReport.back = 0;
-    xInputReport.start = buttonSet.start;
-    xInputReport.dRight = dRight;
-    xInputReport.dLeft = dLeft;
-    xInputReport.dDown = dDown;
-    xInputReport.dUp = dUp;
-    xInputReport.zl = buttonSet.ls;
-    xInputReport.zr = buttonSet.z;
+    xInputReport.rightStickPress = 0;
+    xInputReport.leftStickPress = 0;
+    xInputReport.back = buttonSet.cRight;
+    xInputReport.start = buttonSet.ls;
+    xInputReport.dRight = buttonSet.extra;
+    xInputReport.dLeft = buttonSet.x;
+    xInputReport.dDown = buttonSet.y;
+    xInputReport.dUp = buttonSet.z;
+    xInputReport.zl = buttonSet.down;
+    xInputReport.zr = buttonSet.left;
     xInputReport.home = 0;
     xInputReport.pad1 = 0;
-    xInputReport.a = buttonSet.a;
-    xInputReport.b = buttonSet.b;
-    xInputReport.x = buttonSet.x;
-    xInputReport.y = buttonSet.y;
+    xInputReport.a = buttonSet.right;
+    xInputReport.b = buttonSet.start;
+    xInputReport.x = buttonSet.b;
+    xInputReport.y = buttonSet.r;
 	xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
-	xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
-	xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
-	xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
-	xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-	xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+	xInputReport.rightTrigger = buttonSet.cDown ? 255 : 0;
+	xInputReport.leftStickX = 0;
+	xInputReport.leftStickY = 0;
+	xInputReport.rightStickX = 0;
+	xInputReport.rightStickY = 0;
 };
 
 }

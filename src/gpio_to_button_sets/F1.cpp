@@ -25,6 +25,7 @@ const PinMapping pinMappings[] = {
     { 5, &ButtonSet::l },
     { 6, &ButtonSet::mx },
     { 7, &ButtonSet::my },
+    { 11, &ButtonSet::extra },
     { 12, &ButtonSet::cUp },
     { 13, &ButtonSet::cLeft },
     { 14, &ButtonSet::a },
@@ -62,7 +63,8 @@ const PinMapping remappedPinMappings[] = {
     { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.xPin, &ButtonSet::x },
     { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.yPin, &ButtonSet::y },
     { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.bPin, &ButtonSet::b },
-    { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.rPin, &ButtonSet::r }
+    { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.rPin, &ButtonSet::r },
+    { Persistence::read<Persistence::Pages::RuntimeRemapping>()->f1GpioToButtonSetRemapping.extraPin, &ButtonSet::extra }
 };
 
 bool init = false;

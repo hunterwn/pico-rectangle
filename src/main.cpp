@@ -152,14 +152,25 @@ int main() {
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
-    if (!gpio_get(keyboardPin)) USBConfigurations::Keyboard8KRO::enterMode([](){
-        DACAlgorithms::SetOf8Keys::actuate8KeysReport(GpioToButtonSets::F1::defaultConversion());
-    });
+    // // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
+    // if (!gpio_get(keyboardPin)) USBConfigurations::Keyboard8KRO::enterMode([](){
+    //     DACAlgorithms::SetOf8Keys::actuate8KeysReport(GpioToButtonSets::F1::defaultConversion());
+    // });
 
-    // Default: F1 / melee / adapter
-    USBConfigurations::GccToUsbAdapter::enterMode(
+    // // Default: F1 / melee / adapter
+    // USBConfigurations::GccToUsbAdapter::enterMode(
+    //     [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));},
+    //     [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));}
+    //     );
+
+
+    // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
+    if (!gpio_get(keyboardPin)) USBConfigurations::GccToUsbAdapter::enterMode(
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));},
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));}
-        );
+    );
+
+    USBConfigurations::Keyboard8KRO::enterMode([](){
+        DACAlgorithms::SetOf8Keys::actuate8KeysReport(GpioToButtonSets::F1::defaultConversion());
+    });
 }

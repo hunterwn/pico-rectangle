@@ -34,26 +34,33 @@ struct KeyMapping {
 // to your key. For exemple, for enter on L: { &F1::ButtonSet::l,      0x28  }
 
 const KeyMapping keyMappings[] = {
-    { &F1::ButtonSet::l,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('q') },
-    { &F1::ButtonSet::left,   USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('w') },
-    { &F1::ButtonSet::down,   USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('e') },
-    { &F1::ButtonSet::right,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('r') },
-    { &F1::ButtonSet::mx,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('a') },
-    { &F1::ButtonSet::my,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('s') },
-    { &F1::ButtonSet::start,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('t') },
-    { &F1::ButtonSet::cDown,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('c') },
-    { &F1::ButtonSet::cLeft,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('f') },
-    { &F1::ButtonSet::cUp,    USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('g') },
-    { &F1::ButtonSet::a,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('v') },
-    { &F1::ButtonSet::cRight, USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('b') },
-    { &F1::ButtonSet::r,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('y') },
-    { &F1::ButtonSet::b,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('h') },
-    { &F1::ButtonSet::y,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('u') },
-    { &F1::ButtonSet::x,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('j') },
-    { &F1::ButtonSet::ls,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('i') },
-    { &F1::ButtonSet::z,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('k') },
-    { &F1::ButtonSet::ms,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('o') },
-    { &F1::ButtonSet::up,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('l') }
+    { &F1::ButtonSet::l,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('o') },
+    { &F1::ButtonSet::left,   0x2b }, // Tab
+    { &F1::ButtonSet::down,   USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('i') },
+    { &F1::ButtonSet::right,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('u') },
+    { &F1::ButtonSet::mx,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('q') },
+    // top
+    { &F1::ButtonSet::my,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('t') },
+
+    { &F1::ButtonSet::start,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('l') },
+    { &F1::ButtonSet::cDown,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('p') },
+
+    // bottom
+    { &F1::ButtonSet::cLeft,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('t') },
+    { &F1::ButtonSet::cUp,    USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('r') },
+    { &F1::ButtonSet::a,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('e') },
+
+
+    { &F1::ButtonSet::cRight, 0x2c }, // Space
+    { &F1::ButtonSet::r,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('k') },
+    { &F1::ButtonSet::b,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('j') },
+    { &F1::ButtonSet::x,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('a') },
+    { &F1::ButtonSet::y,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('s') },
+    { &F1::ButtonSet::extra,  USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('d') },
+    { &F1::ButtonSet::z,      USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('w') },
+    { &F1::ButtonSet::ls,     0x29 }, // Escape
+    { &F1::ButtonSet::ms,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('z') },
+    { &F1::ButtonSet::up,     USBConfigurations::Keyboard8KRO::keyIdFromLowerCaseLetter('f') }
 };
 
 void appendKey(char key, int& index) {
